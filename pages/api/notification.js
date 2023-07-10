@@ -27,7 +27,6 @@ export default function handler(req, res) {
       .then((result) => {
         res.status(200).json({
           success: true,
-          test: "7899",
           body: rndInt.toString(),
           endpoint: subscription.endpoint,
           expirationTime: subscription.expirationTime,
@@ -35,9 +34,8 @@ export default function handler(req, res) {
         });
       })
       .catch((e) => {
-        res.status(200).json({
-          success: true,
-          test: "123",
+        res.status(500).json({
+          success: false,
           body: rndInt.toString(),
           endpoint: subscription.endpoint,
           expirationTime: subscription.expirationTime,
