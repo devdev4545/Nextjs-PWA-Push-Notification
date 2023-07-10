@@ -15,8 +15,6 @@ export default function handler(req, res) {
   if (req.method === "POST") {
     const subscription = req.body;
 
-    let response1 = "?";
-    let response2 = "!!";
     const rndInt = randomIntFromInterval(1, 100);
 
     const payload = JSON.stringify({
@@ -34,8 +32,6 @@ export default function handler(req, res) {
           endpoint: subscription.endpoint,
           expirationTime: subscription.expirationTime,
           keys: subscription.keys,
-          thenRes: thenres,
-          errorRes: response2,
         });
       })
       .catch((e) => {
